@@ -10,14 +10,15 @@ class TodoItem {
 
   removeTask() {
     if (this.container.todoItems.indexOf(this) != -1) {
+      console.log(this.container.todoItems);
       this.container.todoItems.splice(this.container.todoItems.indexOf(this), 1);
       this.container.saveToLS();
-      this.container.container.setState({ todoList: this.container })
+      this.container.container.setState({todoList: this.container})
     }
   }
 
   finishTask() {
     this.done = true;
-    this.container.container.setState({ todoList: this.container })
+    this.container.container.setState({todoList: this.container})
   }
 }
